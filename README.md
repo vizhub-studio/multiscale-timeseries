@@ -7,6 +7,17 @@ Why? The problem at hand is to record analytics for various events such as page 
  * Persist the timeseries as JSON.
  * Access the analytics data for presentation within the product.
 
+## Implementation and verification
+
+The package is a small CommonJS utility with [`index.js`](index.js), [`index.d.ts`](index.d.ts), and a standalone [`test.js`](test.js). Its retention/aggregation behavior should be evaluated for the consuming application's timestamp units, timezones, record size and resolution requirements.
+
+```bash
+npm ci
+npm test
+```
+
+The `sizeEstimator` script (`npm run sizeEstimator`) is for examining size trade-offs, not a production migration. No `build` script is defined in the root package. The examples below describe this library, **not** the current VizHub analytics/KPI implementation.
+
 ## Example Usage
 
 ```js
